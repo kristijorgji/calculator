@@ -46,7 +46,6 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="Operators\Add.cs" />
     <Compile Include="Operators\Divide.cs" />
-    <Compile Include="Operators\Equals.cs" />
     <Compile Include="Operators\IOperator.cs" />
     <Compile Include="Operators\Multiply.cs" />
     <Compile Include="Operators\OperandFactory.cs" />

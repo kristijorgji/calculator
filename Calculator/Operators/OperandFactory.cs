@@ -20,8 +20,6 @@ namespace Calculator.Operators
                     return new Multiply();
                 case '\\': 
                     return new Divide();
-                case '=':
-                    return new Equals();
                 default:
                     throw new ArgumentException("Invalid operand");
             }

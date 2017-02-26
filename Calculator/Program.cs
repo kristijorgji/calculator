@@ -68,6 +68,30 @@ namespace Calculator
 
             if (calc.GetResult() != 41F)
                 throw new Exception();
+
+
+            calc = new Calculator();
+            calc.AddInput('1');
+            calc.AddInput('2');
+            calc.AddInput('*');
+            calc.AddInput('1');
+            calc.AddInput('0');
+            calc.AddInput('\\');
+            calc.AddInput('2');
+            calc.AddInput('=');
+
+            if (calc.GetResult() != 60F)
+                throw new Exception();
+
+            calc = new Calculator();
+            calc.AddInput('0');
+            calc.AddInput('2');
+            calc.AddInput('+');
+            calc.AddInput('4');
+            calc.AddInput('=');
+
+            if (calc.GetResult() != 6F)
+                throw new Exception();
         }
     }
 }

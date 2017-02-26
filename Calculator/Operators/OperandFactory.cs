@@ -21,7 +21,7 @@ namespace Calculator.Operators
                 case '\\': 
                     return new Divide();
                 default:
-                    throw new ArgumentException("Invalid operand");
+                    throw new ArgumentException("Invalid operator");
             }
         }
     }

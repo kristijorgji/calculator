@@ -10,88 +10,23 @@ namespace Calculator
     {
         static void Main(string[] operands)
         {
-            Calculator calc = new Calculator();
-            calc.AddInput('1');
-            calc.AddInput('.');
-            calc.AddInput('2');
-            calc.AddInput('+');
-            calc.AddInput('3');
-            calc.AddInput('=');
 
-            if (calc.GetResult() != 4.2F)
-                throw new Exception();
+            Tests tests = new Tests();
 
-            calc = new Calculator();
-            calc.AddInput('1');
-            calc.AddInput('2');
-            calc.AddInput('+');
-            calc.AddInput('3');
-            calc.AddInput('=');
-
-            if (calc.GetResult() != 15F)
-                throw new Exception();
-
-            calc = new Calculator();
-            calc.AddInput('1');
-            calc.AddInput('2');
-            calc.AddInput('+');
-            calc.AddInput('3');
-            calc.AddInput('1');
-            calc.AddInput('=');
-
-            if (calc.GetResult() != 43F)
-                throw new Exception();
-
-
-            calc = new Calculator();
-            calc.AddInput('1');
-            calc.AddInput('2');
-            calc.AddInput('+');
-            calc.AddInput('3');
-            calc.AddInput('.');
-            calc.AddInput('1');
-            calc.AddInput('=');
-
-            if (calc.GetResult() != 15.1F)
-                throw new Exception();
-
-
-            calc = new Calculator();
-            calc.AddInput('1');
-            calc.AddInput('2');
-            calc.AddInput('+');
-            calc.AddInput('3');
-            calc.AddInput('1');
-            calc.AddInput('-');
-            calc.AddInput('2');
-            calc.AddInput('=');
-
-            if (calc.GetResult() != 41F)
-                throw new Exception();
-
-
-            calc = new Calculator();
-            calc.AddInput('1');
-            calc.AddInput('2');
-            calc.AddInput('*');
-            calc.AddInput('1');
-            calc.AddInput('0');
-            calc.AddInput('\\');
-            calc.AddInput('2');
-            calc.AddInput('=');
-
-            if (calc.GetResult() != 60F)
-                throw new Exception();
-
-            calc = new Calculator();
-            calc.AddInput('0');
-            calc.AddInput('2');
-            calc.AddInput('+');
-            calc.AddInput('4');
-            calc.AddInput('=');
-
-            if (calc.GetResult() != 6F)
-                throw new Exception();
+            try
+            {
+                tests.AdditionTest();
+                tests.AdditionTwoDigitTest();
+                tests.AdditionTwoDigitsBothSidesTest();
+                tests.AdditionFloatTest();
+                tests.AdditionSubstractionTogetherTest();
+                tests.MultiplyAndDivideTest();
+                tests.LeadingZeroTest();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(String.Format("One test failed, Stack trace: {0}", e.StackTrace));
+            }
         }
     }
 }
